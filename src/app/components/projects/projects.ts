@@ -19,7 +19,8 @@ export class Projects {
       description:
         'Designed and developed a comprehensive GUI software to control and monitor multiple subsystems of the Hybrid Photonics Integration setup, including machine vision, beam profiling, laser control, temperature control, and positioning. The system enables seamless hardware communication, real-time visualization, and subsystem-level automation with an intuitive interface. JVM heap optimization was implemented to resolve memory overflow issues caused by continuous video data streams.',
       techStack: ['Java', 'Python', 'Hardware Integration'],
-      links: [],
+      links: [
+        { text: 'Details', url: '#' },],
       duration: 'Jan 2024 - May 2024',
       role: 'Full-stack Developer',
       features: [
@@ -45,7 +46,7 @@ export class Projects {
         'Clinic management web app with appointment scheduling, patient records, and in-app chat between doctors and patients. Designed for doctors and staff to handle appointments, patient data, and prescriptions seamlessly. Built the frontend with Angular for a responsive and intuitive UI, and connected it to a Node.js and Express backend. Used PostgreSQL in a Docker environment for consistent data handling and JWT for secure authentication.',
       techStack: ['Angular', 'Node.js', 'Express.js', 'PostgreSQL'],
       links: [
-        // { text: 'Details', url: '#' },
+        { text: 'Details', url: '#' },
         { text: 'Live Site', url: 'https://medtik.net' }
       ],
       duration: 'Jun 2023 - Dec 2023',
@@ -71,7 +72,8 @@ export class Projects {
       description:
         'Developed a high-performance backend for an e-commerce platform focusing on scalability, maintainability, and optimized database operations. Implemented a microservices-based architecture using Java Spring Boot, containerized with Docker, orchestrated via Kubernetes, and connected to PostgreSQL and MongoDB databases. The system handles high concurrency and ensures reliability for production-level traffic.',
       techStack: ['Java', 'Spring Boot', 'Docker', 'Kubernetes', 'PostgreSQL', 'MongoDB'],
-      links: [{ text: 'GitHub', url: 'https://github.com/Sarahh1928/scalify/tree/main' }],
+      links: [
+        { text: 'Details', url: '#' },{ text: 'GitHub', url: 'https://github.com/Sarahh1928/scalify/tree/main' }],
       duration: 'Feb 2023 - Aug 2023',
       role: 'Backend Developer',
       features: [
@@ -89,7 +91,8 @@ export class Projects {
       description:
         'Developed a comprehensive pharmacy management system that streamlines interactions between patients, pharmacists, and admins. The platform allows medicine browsing, ordering, wallet payments, and in-app chat for consultations. Admins can manage users and view sales, pharmacists can manage medicines and track reports, and patients can browse, order, and communicate with pharmacists. Built with a MERN stack (MongoDB, Express.js, React.js, Node.js) with real-time features using Socket.io, JWT authentication, and integrated payment options.',
       techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
-      links: [{ text: 'GitHub', url: 'https://github.com/sarahh1928/healthcare-system' }],
+      links: [
+        { text: 'Details', url: '#' },{ text: 'GitHub', url: 'https://github.com/Sarahh1928/pharmacy' }],
       duration: 'Mar 2023 - Jul 2023',
       role: 'Full-stack Developer',
       features: [
@@ -117,7 +120,8 @@ export class Projects {
       description:
         'Developed a comprehensive database system to track clubs, matches, fans, tickets, and stadiums. The system implements stored procedures, functions, and views to handle all operations including adding/updating/deleting clubs, matches, fans, and stadiums. Key features include attendance tracking, ticket sales management, match scheduling, and reporting analytics. The project enforces strict database constraints and follows best practices for stored procedure and view implementation.',
       techStack: ['SQL', 'C#'],
-      links: [{ text: 'GitHub', url: '#' }],
+      links: [
+        { text: 'Details', url: '#' },{ text: 'GitHub', url: '#' }],
       duration: 'Jan 2022 - Apr 2022',
       role: 'Database Developer',
       features: [
@@ -159,4 +163,11 @@ export class Projects {
   closeProject() {
     this.selectedProject = null;
   }
+  handleLinkClick(link: any, project: any, event: Event) {
+  if (link.text === 'Details') {
+    event.preventDefault(); // prevent following the link
+    this.openProject(project); // open detail
+  }
+}
+
 }

@@ -80,11 +80,18 @@ li {
 
 .blur {
   position: absolute;
-  width: 9rem;
-  height: 9rem;
+  width: 12rem;
+  height: 12rem;
   background-color: #5f509d; 
   filter: blur(100px);
   border-radius: 50%; /* perfectly round */
   z-index: -1; /* behind content */
   pointer-events: none; /* ensures it doesn’t block clicks */
+  top: 100px;
+  left: 80%;
+}
+@media (max-width:740px) {
+    .blur {
+  left: 40%;
+    }
 }

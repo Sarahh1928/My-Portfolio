@@ -144,8 +144,8 @@ button:hover {
 
 .blur {
   position: absolute;
-  width: 9rem;
-  height: 9rem;
+  width: 12rem;
+  height: 12rem;
   background-color: #5f509d; 
   filter: blur(100px);
   border-radius: 50%; /* perfectly round */

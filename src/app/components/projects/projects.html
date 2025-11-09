@@ -1,13 +1,18 @@
 <section class="projects">
+  <div class="background-circles">
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+  </div>
   <h2>Projects</h2>
   <div class="project-grid">
     <ng-container *ngFor="let project of projects ; let i = index">
-      <div class="project-card" *ngIf="project" (click)="openProject(project)" revealOnScroll
-        [direction]="i % 2 === 0 ? 'left' : 'right'" [distance]="'50px'" [class.active]="selectedProject === project">
+      <div class="project-card" *ngIf="project" revealOnScroll [direction]="i % 2 === 0 ? 'left' : 'right'"
+        [distance]="'50px'" [class.active]="selectedProject === project">
 
         <!-- effect only on border ones -->
         <div class="blur" *ngIf="i % 2 === 0"></div>
-        <h3>{{ project.title }}</h3>  
+        <h3>{{ project.title }}</h3>
         <p>{{ project.smallDescription }}</p>
 
         <div class="tech-stack">
@@ -15,11 +20,12 @@
         </div>
 
         <div class="buttons">
-          <a *ngFor="let link of project.links || []" href="#" rel="noopener noreferrer"
-            (click)="openProject(project); $event.preventDefault()">
+          <a *ngFor="let link of project.links || []" href="{{ link.url }}" rel="noopener noreferrer"
+            [target]="link.text === 'Details' ? null : '_blank'" (click)="handleLinkClick(link, project, $event)">
             {{ link.text }}
           </a>
         </div>
+
       </div>
     </ng-container>
 

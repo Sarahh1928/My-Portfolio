@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output, OutputEmitterRef } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, OutputEmitterRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-project-detail',
@@ -25,9 +25,27 @@ export class ProjectDetail {
   };
   currentImageIndex = 0;
 
+  @ViewChild('detailsCard') detailsCard!: ElementRef<HTMLDivElement>;
+  ngAfterViewInit() {
+    // Trigger animation after a tiny delay to ensure element is in DOM
+    setTimeout(() => {
+      this.detailsCard.nativeElement.classList.add('show');
+    }, 50);
+  }
+
   closeDetails() {
+  if (this.detailsCard) {
+    const cardEl = this.detailsCard.nativeElement;
+    cardEl.classList.remove('show');
+    cardEl.classList.add('closing');
+
+    // Wait for the animation to finish before emitting close
+    setTimeout(() => this.close.emit(), 400); // match slideUpClose duration
+  } else {
     this.close.emit();
   }
+}
+
 
   prevImage() {
     if (!this.project?.images) return;

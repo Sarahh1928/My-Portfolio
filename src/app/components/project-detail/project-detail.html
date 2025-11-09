@@ -3,7 +3,7 @@
     <div class="overlay" (click)="closeDetails()"></div>
 
     <!-- Details Card -->
-    <div class="details-card">
+    <div class="details-card" #detailsCard>
 
         <div class="details-card-content">
 
@@ -44,9 +44,11 @@
             </div>
             <div class="details-card-footer">
                 <div class="project-links">
-                    <a *ngFor="let link of project.links || []" [href]="link.url" target="_blank">
-                        {{ link.text }}
-                    </a>
+                    <ng-container *ngFor="let link of project.links || []">
+                        <a *ngIf="link.text !== 'Details'" [href]="link.url" target="_blank">
+                            {{ link.text }}
+                        </a>
+                    </ng-container>
                 </div>
             </div>
         </div>

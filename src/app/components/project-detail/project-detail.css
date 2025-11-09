@@ -19,7 +19,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -20%);
   background: #1f2f4d;
   color: #fff;
   border-radius: 16px;
@@ -31,7 +31,33 @@
   background: linear-gradient(145deg,#1f2f4d,#2a3b63);
   box-shadow: 0 12px 30px rgba(0,0,0,0.5);
   height: 90%;
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
+
+/* Active/visible state */
+.details-card.show {
+  transform: translate(-50%, -50%); /* move to center */
+  opacity: 1;
+  animation: slideUpBounce 0.6s ease-out forwards;
+}
+@keyframes slideUpBounce {
+  0% { transform: translate(-50%, 30%); opacity: 0; }
+  60% { transform: translate(-50%, -45%); opacity: 1; }
+  80% { transform: translate(-50%, -50%); }
+  100% { transform: translate(-50%, -50%); }
+}
+
+.details-card.closing {
+  animation: slideUpClose 0.4s ease-in forwards;
+}
+
+@keyframes slideUpClose {
+  0% { transform: translate(-50%, -50%); opacity: 1; }
+  100% { transform: translate(-50%, -80%); opacity: 0; }
+}
+
+
 
 /* Scrollable area inside the card */
 .details-card-content {
@@ -134,6 +160,13 @@ margin-top: 12px;
 .features-stack-row.reverse-row {
   display: flex;
     flex-direction: column-reverse;
+}
+@media (max-width:740px) {
+  
+.features-stack-row {
+  display: flex;
+    flex-direction: column;
+}
 }
 
 .features ul {
