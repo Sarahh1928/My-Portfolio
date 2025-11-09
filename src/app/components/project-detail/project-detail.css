@@ -1,0 +1,174 @@
+.project-detail-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 20, 40, 0.85);
+  backdrop-filter: blur(5px);
+}
+
+.details-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1f2f4d;
+  color: #fff;
+  border-radius: 16px;
+  padding: 0;
+  width: 80%;
+  max-width: 800px;
+  z-index: 20;
+  overflow: hidden;
+  background: linear-gradient(145deg,#1f2f4d,#2a3b63);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+  height: 90%;
+}
+
+/* Scrollable area inside the card */
+.details-card-content {
+  padding: 28px 28px 36px;    /* card inner padding */
+  max-height: calc(90vh ); /* allow the whole card to remain within viewport */
+  overflow-y: auto;           /* <-- this is the scrollbar target */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+
+/* Two-column layout under images */
+.features-stack-row { display:flex; gap:24px; margin-top:18px; }
+.features, .stack-role { flex:1 1 0; }
+
+/* Custom scrollbar (apply to the inner scrollable element) */
+.details-card-content::-webkit-scrollbar { width:10px; }
+.details-card-content::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); border-radius:10px; }
+.details-card-content::-webkit-scrollbar-thumb { background: linear-gradient(180deg,#00bfff,#0078d7); border-radius:10px; }
+.details-card-content::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg,#00d0ff,#0088ff); }
+
+/* Firefox scrollbar */
+.details-card-content { scrollbar-width: thin; scrollbar-color: #00bfff rgba(255,255,255,0.03); }
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.top-row {
+  align-items: center;
+}
+.details-card-footer {
+    display: flex;
+    justify-content: flex-end; /* aligns content to the right */
+    padding: 16px 28px;       /* spacing inside the footer */
+    border-top: 1px solid rgba(255,255,255,0.1); /* optional separator line */
+    margin-top: 20px;         /* spacing from content above */
+    flex-shrink: 0;
+}
+.project-links a {
+  margin-left: 10px;
+  padding: 6px 12px;
+  background: #00bfff;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.project-links a:hover {
+  background: #0088d7;
+  transform: translateY(-2px);
+}
+
+.carousel {
+  position: relative;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.carousel img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 12px;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.description{
+margin-top: 12px;
+}
+.prev { left: 0; }
+.next { right: 0; }
+
+.features-stack-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-top: 20px;
+  text-align: left;
+  padding: 0 4px;
+}
+
+.features-stack-row.reverse-row {
+  display: flex;
+    flex-direction: column-reverse;
+}
+
+.features ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.tech-stack span {
+  display: inline-block;
+  margin: 10px 6px;
+  background: #0090cc;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+.tech-stack p{
+  margin-top: 20px;
+}
+/* ===== Scrollbar Styling ===== */
+.details-card::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 6px;
+}
+
+
+
+.details-card::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05); /* subtle track background */
+  border-radius: 6px;
+}
+
+.details-card::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00bfff, #0078d7);
+  border-radius: 6px;
+}
+
+.details-card::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00d0ff, #0088ff);
+}

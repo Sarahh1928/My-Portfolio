@@ -1,0 +1,54 @@
+<div *ngIf="project" class="project-detail-container">
+    <!-- Overlay -->
+    <div class="overlay" (click)="closeDetails()"></div>
+
+    <!-- Details Card -->
+    <div class="details-card">
+
+        <div class="details-card-content">
+
+            <!-- Close Button -->
+            <button class="close-btn" (click)="closeDetails()">✕</button>
+            <!-- Top row: Title + Links -->
+            <div class="top-row">
+                <h2 class="project-title">{{ project.title }}</h2>
+            </div>
+
+            <!-- Image carousel -->
+            <div *ngIf="project.images && project.images.length > 0" class="carousel">
+                <button *ngIf="project.images.length > 1 && currentImageIndex > 0" class="prev"
+                    (click)="prevImage()">‹</button>
+                <img [src]="project.images[currentImageIndex]" [alt]="project.title">
+                <button *ngIf="project.images.length > 1 && currentImageIndex < project.images.length - 1" class="next"
+                    (click)="nextImage()">›</button>
+            </div>
+
+            <!-- Description -->
+            <p class="description">{{ project.description }}</p>
+
+            <!-- Features + Stack/Role -->
+            <div class="features-stack-row" [ngClass]="{'reverse-row': !project.images || project.images.length === 0}">
+                <div class="features">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li *ngFor="let feature of project.features || []">{{ feature }}</li>
+                    </ul>
+                </div>
+                <div class="stack-role">
+                    <h3>Tech Stack</h3>
+                    <div class="tech-stack">
+                        <span *ngFor="let tech of project.techStack || []">{{ tech }}</span>
+                    </div>
+                    <p><strong>Role:</strong> {{ project.role }}</p>
+                </div>
+            </div>
+            <div class="details-card-footer">
+                <div class="project-links">
+                    <a *ngFor="let link of project.links || []" [href]="link.url" target="_blank">
+                        {{ link.text }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<section class="skills">
+  <h2>Skills</h2>
+  <div class="skills-wrapper">
+    <div class="blur" style="left:10%;top: -100px;"></div>
+    <!-- <div class="blur" style="left:70%;top: -100px;"></div> -->
+    <div class="skills-grid">
+
+      <div class="skill-pill" *ngFor="let skill of skills; let i = index" revealOnScroll [scale]="true"
+        [distance]="'40px'">
+        <img [src]="skill.icon" [alt]="skill.name" class="skill-icon" />
+        <span>{{ skill.name }}</span>
+      </div>
+    </div>
+  </div>
+</section>

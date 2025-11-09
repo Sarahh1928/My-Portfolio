@@ -1,0 +1,115 @@
+.projects {
+  padding: 80px 10%;
+  color: #fff;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #b927fc, #2c64fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: #1f2f4d;
+  border-radius: 5%;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease-out;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto;
+  height: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.tech-stack span {
+  background: rgba(255,255,255,0.1);
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buttons a {
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, #b927fc, #2c64fc);
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.buttons a:hover {
+  background: linear-gradient(90deg, #2c64fc, #b927fc);
+}
+@media (max-width:740px) {
+    
+.project-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+}
+.blur {
+  position: absolute;
+  width: 9rem;
+  height: 9rem;
+  background-color: #5f509d; 
+  filter: blur(100px);
+  border-radius: 50%; /* perfectly round */
+  z-index: -1; /* behind content */
+  pointer-events: none; /* ensures it doesn’t block clicks */
+  left:90%;
+  top:100px;
+}
+@media (max-width:740px) {
+  
+.blur {
+
+  left:40%;
+  top: 0;
+}
+}

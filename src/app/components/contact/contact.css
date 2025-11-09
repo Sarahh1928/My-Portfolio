@@ -1,0 +1,154 @@
+.contact {
+  padding: 60px 10%;
+  color: #fff;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.intro {
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.contact-details,
+.contact-form-container {
+  flex: 1 1 50%;
+  max-width: 600px;
+  transition: all 0.6s ease-out;
+}
+
+
+/* Left Side */
+.contact-details {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-details p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.contact-details a {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+.links {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.links a {
+  margin-right: 15px;
+  background: #1f2f4d;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.links a:hover {
+  background: #00bfff;
+}
+
+/* Right Side */
+.contact-form {
+  flex: 1;
+  min-width: 320px;
+  background: #1f2f4d;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.contact-form-container{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 320px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2a3a5a;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #bbb;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #00bfff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0090cc;
+}
+.fa-brands{
+  margin-right: 10px;
+} 
+.fa-solid{
+  margin-right: 7px;
+}
+.message-sent {
+  color: #4BB543;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.message-notsent {
+  color: #ff4d4d;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.blur {
+  position: absolute;
+  width: 9rem;
+  height: 9rem;
+  background-color: #5f509d; 
+  filter: blur(100px);
+  border-radius: 50%; /* perfectly round */
+  z-index: -1; /* behind content */
+  pointer-events: none; /* ensures it doesn’t block clicks */
+}

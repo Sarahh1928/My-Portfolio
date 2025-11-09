@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="left">
+        <h5>Hello, I am</h5>
+        <h1>Sarah Mohamed
+            <div class="blur" style="bottom: 100px;"></div>
+        </h1>
+        <h4>
+            <span class="typed-role"></span>
+        </h4>
+        <p>Building Modern, Full-Stack, and User-Centric Web Applications with Cutting-Edge Technologies.</p>
+        <!-- <button (click)="downloadCV()">Download CV</button> -->
+        <!-- <p>Building Modern, Full-Stack, and User-Centric Web Applications with Cutting-Edge Technologies.</p> -->
+        <button (click)="downloadCV()">Download CV</button>
+    </div>
+    <div class="right">
+        <div class="lottie-wrapper">
+            <div class="blur" style="left: 100px; width:9rem; height:9rem;"></div>
+            <lottie-player src="developer.json" background="transparent" speed="1" style="width: 400px; height: 400px;"
+                loop autoplay>
+            </lottie-player>
+        </div>
+    </div>
+
+    <div class="scroll-down"><span>↓</span>
+        <!-- <div class="scroll-shadow"></div> -->
+    </div>
+</div>
+
+<section id="projects">
+    <app-projects></app-projects>
+</section>
+
+<section id="experience">
+    <app-experience></app-experience>
+    <!-- <div class="blur" style="bottom: 0; left: 10%;"></div> -->
+</section>
+
+<section id="skills">
+    <app-skills></app-skills>
+    <!-- <div class="blur" style="top: 50px; right: 20px;"></div> -->
+</section>
+
+<section id="education">
+    <app-education></app-education>
+    <!-- <div class="blur" style="bottom: 50px; right: 30px;"></div> -->
+</section>
+
+<section id="contact">
+    <app-contact></app-contact>
+    <!-- <div class="blur" style="top: 0; left: 50%;"></div> -->
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  min-height: 80vh;
+  padding:7% 12% 5%;
+  
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left h5 {
+  font-weight: 400;
+  color: #aaa;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+.left h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(to right, #b927fc, #2c64fc);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  /* animation: glow 2s infinite alternate; */
+}
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 10px #b927fc, 0 0 20px #2c64fc; }
+  50% { text-shadow: 0 0 20px #b927fc, 0 0 30px #2c64fc; }
+}
+
+.left h1 {
+  /* animation: glow 2s infinite alternate; */
+}
+
+
+.left h4 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #e0e0e0;
+}
+.typed-role {
+  color: #C767AD;
+  font-weight: 600;
+}
+
+.typed-cursor {
+  color: #b927fc;
+  font-weight: bold;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.left p {
+  font-size: 1.1rem;
+  color: #c1bfbf;
+  margin-top: 15px;
+}
+
+.left button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #2c64fc, #b927fc);
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 30px;
+  width: fit-content;
+}
+
+.left button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(178, 39, 252, 0.5);
+}
+
+.right {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.lottie-wrapper {
+  width: 70%;
+  transform: scale(2);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 5% 0;
+  }
+
+  .left h1 {
+    font-size: 2.3rem;
+  }
+
+  .right {
+    justify-content: left;
+  }
+  .lottie-wrapper {
+    transform: scale(1) !important; 
+  }
+  .left button {
+    align-self: anchor-center;
+  }
+  .scroll-down{
+    display: none;
+  }
+}
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #C67E71;
+  font-size: 1.5rem;
+  animation: bounce 1.5s infinite;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* The glowing or blurred shadow behind the arrow */
+.scroll-down .scroll-shadow {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 3rem;
+  height: 3rem;
+  background: #b5695c;
+  opacity: 0.3;
+  border-radius: 50%;
+  filter: blur(15px);
+  transform: translate(-50%, -50%);
+  /* animation: shadowBounce 1.5s infinite; */
+  z-index: -1;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 10px);
+  }
+}
+
+/* Shadow bounces in sync */
+/* @keyframes shadowBounce {
+  0%, 100% {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, 10px) scale(1);
+    opacity: 0.5;
+  }
+} */
+
+
+.blur {
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  background-color: #5f509d; 
+  filter: blur(100px);
+  border-radius: 50%; /* perfectly round */
+  z-index: -1; /* behind content */
+  pointer-events: none; /* ensures it doesn’t block clicks */
+}
+
+.blur.flash {
+  animation: flashGlow 3s ease-in-out infinite;
+}
+
+@keyframes flashGlow {
+  0% {
+    /* opacity: 0.5; */
+    transform: scale(1);
+    /* filter: blur(90px); */
+  }
+  50% {
+    /* opacity: 1; */
+    transform: scale(2);
+    /* filter: blur(220px); */
+  }
+  100% {
+    /* opacity: 0.5; */
+    transform: scale(1);
+    /* filter: blur(90px); */
+  }
+}

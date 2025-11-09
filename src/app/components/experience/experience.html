@@ -1,0 +1,17 @@
+<section class="experience">
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div class="experience-card" *ngFor="let exp of experiences ; let i = index" revealOnScroll
+        [direction]="i % 2 === 0 ? 'bottom' : 'top'" [distance]="'50px'">
+      <div class="exp-header">
+        <h3>{{ exp.role }}</h3>
+        <span class="duration">{{ exp.duration }}</span>
+      </div>
+      <h4>{{ exp.company }}</h4>
+      <p class="location">{{ exp.location }}</p>
+      <ul>
+        <li *ngFor="let point of exp.achievements">{{ point }}</li>
+      </ul>
+    </div>
+  </div>
+</section>
