@@ -12,6 +12,17 @@ export class Experience {
 
   experiences = [
     {
+      role: 'Frontend Developer',
+      company: 'QNBeyond Plus',
+      location: 'Cairo, Egypt',
+      duration: 'March 2026 – Present',
+      achievements: [
+        'Developing and maintaining scalable front-end application using React Native and TypeScript.',
+        'Collaborated with cross-functional teams to integrate APIs and deliver seamless user experiences.',
+        'Implemented reusable components and followed best practices to ensure code quality and maintainability.'
+      ]
+    },
+    {
       role: 'Freelance Full Stack Developer',
       company: 'Medtik (medtik.net)',
       location: 'Remote',
