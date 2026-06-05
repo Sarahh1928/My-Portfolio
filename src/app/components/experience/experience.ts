@@ -17,9 +17,10 @@ export class Experience {
       location: 'Cairo, Egypt',
       duration: 'March 2026 – Present',
       achievements: [
-        'Developing and maintaining scalable front-end application using React Native and TypeScript.',
-        'Collaborated with cross-functional teams to integrate APIs and deliver seamless user experiences.',
-        'Implemented reusable components and followed best practices to ensure code quality and maintainability.'
+        'Develop and maintain cross-platform mobile applications using React Native and TypeScript.',
+        'Develop reusable component libraries and maintain consistent UI/UX standards across multiple application modules.',
+        'Integrate RESTful APIs and collaborate closely with backend, QA, and product teams to deliver high-quality features.',
+        'Contribute to application performance improvements, debugging, testing, and continuous enhancement of the codebase.'
       ]
     },
     {

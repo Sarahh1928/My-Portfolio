@@ -1,59 +1,173 @@
-# UMSAngular
+# My Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
+A modern personal portfolio built with **Angular 20**, showcasing my experience, projects, and skills as a Full Stack Developer.
 
-## Development server
+---
 
-To start a local development server, run:
+## ✨ Overview
+
+This project is a single-page portfolio web application designed to present my professional profile, technical skills, and real-world projects in a clean and interactive way.
+
+It includes animated UI sections, reusable components, and a responsive design optimized for both desktop and mobile devices.
+
+---
+
+## 🧰 Tech Stack
+
+* Angular 20 (Standalone Components)
+* TypeScript
+* HTML5 / CSS3
+* Angular Forms & Common Modules
+* Angular Material (SnackBar)
+* Typed.js (typing animation)
+* Custom Angular Directives
+* GitHub Pages (deployment)
+
+---
+
+## 📁 Features
+
+### 👤 Personal Profile
+
+* Dynamic introduction section with animated typing effect
+* CV download functionality
+* Contact information display
+
+### 💼 Experience Section
+
+* Timeline of professional roles
+* Frontend (React Native / Angular) and Full Stack experience
+* Real-world company projects
+
+### 📂 Projects Showcase
+
+* Interactive project cards
+* Detailed project modal view
+* Image carousel per project
+* Tech stack and role descriptions
+
+### 🛠 Skills Section
+
+* Categorized technical skills
+* Icon-based visual representation
+* Frontend, backend, database, and DevOps tools
+
+### 🎓 Education
+
+* Academic background (German University in Cairo)
+* Coursework and achievements
+
+### 📬 Contact System
+
+* Contact form with async message handling
+* Email, phone, GitHub, and LinkedIn integration
+* Snackbar feedback notifications
+
+### 🎨 UI/UX
+
+* Smooth scroll navigation
+* Reveal-on-scroll animations
+* Responsive design for all devices
+
+---
+
+## 📦 Project Structure
+
+```
+src/app/
+│
+├── components/
+│   ├── home/
+│   ├── nav-bar/
+│   ├── projects/
+│   ├── project-detail/
+│   ├── experience/
+│   ├── skills/
+│   ├── education/
+│   ├── contact/
+│   └── footer/
+│
+├── services/
+├── directives/
+└── app.config.ts
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Sarahh1928/My-Portfolio.git
+cd My-Portfolio
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run development server
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
+
+## 📦 Build for Production
 
 ```bash
-ng generate --help
+ng build --configuration production --base-href="/My-Portfolio/"
 ```
 
-## Building
+---
 
-To build the project run:
+## 🌐 Deployment (GitHub Pages)
+
+This project is deployed using **angular-cli-ghpages**:
 
 ```bash
-ng build
+npx angular-cli-ghpages --dir=dist/sarah-mohamed
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Live site:
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```
+https://sarahh1928.github.io/My-Portfolio/
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📌 Key Highlights
 
-```bash
-ng e2e
-```
+* Fully responsive portfolio
+* Real-world full-stack projects included
+* Clean Angular standalone architecture
+* Production-ready deployment setup
+* Smooth animations and interactive UI
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 👨‍💻 Author
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Sarah Mohamed**
+Frontend / Full Stack Developer
+
+* GitHub: https://github.com/Sarahh1928
+* LinkedIn: https://www.linkedin.com/in/sarah-mohamed-604a96214
+* Email: [sarahmohamed1928@gmail.com](mailto:sarahmohamed1928@gmail.com)
+
+---
+
+## 📄 License
+
+This project is for personal portfolio use.

@@ -119,9 +119,9 @@ export class Projects {
         'A database system to manage clubs, matches, fans, tickets, and stadiums efficiently for enhanced data accessibility and reporting.',
       description:
         'Developed a comprehensive database system to track clubs, matches, fans, tickets, and stadiums. The system implements stored procedures, functions, and views to handle all operations including adding/updating/deleting clubs, matches, fans, and stadiums. Key features include attendance tracking, ticket sales management, match scheduling, and reporting analytics. The project enforces strict database constraints and follows best practices for stored procedure and view implementation.',
-      techStack: ['SQL', 'C#'],
+      techStack: [ 'C#','ASP.NET','SQL'],
       links: [
-        { text: 'Details', url: '#' },{ text: 'GitHub', url: '#' }],
+        { text: 'Details', url: '#' },{ text: 'GitHub', url: 'https://github.com/Sarahh1928/Football-Club-Management-System' }],
       duration: 'Jan 2022 - Apr 2022',
       role: 'Database Developer',
       features: [

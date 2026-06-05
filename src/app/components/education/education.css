@@ -1,5 +1,5 @@
 .education {
-  padding: 60px 10%;
+  padding: 60px 6%;
   color: #fff;
 }
 
@@ -7,7 +7,6 @@
   text-align: center;
   font-size: 2rem;
   margin-bottom: 40px;
-  color: #fff;
 }
 
 .timeline {
@@ -92,6 +91,6 @@ li {
 }
 @media (max-width:740px) {
     .blur {
-  left: 40%;
+  left: 35%;
     }
 }

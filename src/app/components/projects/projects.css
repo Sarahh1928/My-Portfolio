@@ -7,9 +7,6 @@
 .projects h2 {
   font-size: 2.5rem;
   margin-bottom: 40px;
-  background: linear-gradient(90deg, #b927fc, #2c64fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .project-grid {
