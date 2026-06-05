@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, NgZone, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import emailjs from '@emailjs/browser';
 import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ContactService } from '../../services/contact-service';
 
 @Component({
   selector: 'app-contact',
@@ -14,9 +14,9 @@ import { ContactService } from '../../services/contact-service';
 export class Contact {
   constructor(
     private snack: MatSnackBar,
-    private contactService: ContactService,
-    private cdr: ChangeDetectorRef
-  ) {}
+    private zone: NgZone,
+    private cdr: ChangeDetectorRef // ✅ new
+  ) { }
 
   contactInfo = {
     email: 'sarahmohamed1928@gmail.com',
@@ -33,32 +33,42 @@ export class Contact {
   };
 
   messageSent = false;
-  message = '';
+  message = "";
 
   sendMessage() {
-    this.contactService.sendMessage(this.formData)
-      .then(() => {
+  const serviceID = 'service_585wq16';
+  const ownerTemplateID = 'template_p81bm6c';
+  const senderTemplateID = 'template_8tfvo3l';
+  const publicKey = '222QIqpdS79JCjohR';
+
+  const templateParams = {
+  name: this.formData.name,
+  email: this.formData.email,
+  message: this.formData.message
+};
+
+  emailjs.send(serviceID, ownerTemplateID, templateParams, publicKey)
+    .then(() => emailjs.send(serviceID, senderTemplateID, templateParams, publicKey))
+    .then(() => {
+      this.zone.run(() => {
         this.formData = { name: '', email: '', message: '' };
         this.messageSent = true;
-        this.message = 'Message sent successfully!';
+        this.message = "Message sent successfully!";
         this.cdr.detectChanges();
 
         setTimeout(() => {
           this.messageSent = false;
-          this.message = '';
-          this.cdr.detectChanges();
-        }, 3000);
-      })
-      .catch(() => {
-        this.messageSent = false;
-        this.message = 'Failed to send message. Please try again later.';
-        this.cdr.detectChanges();
-
-        setTimeout(() => {
-          this.messageSent = false;
-          this.message = '';
+          this.message = "";
           this.cdr.detectChanges();
         }, 3000);
       });
-  }
+    })
+    .catch((error) => {
+      console.log("EmailJS error:", error);
+
+      this.messageSent = false;
+      this.message = "Failed to send message.";
+      this.cdr.detectChanges();
+    });
+}
 }
